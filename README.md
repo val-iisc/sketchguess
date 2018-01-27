@@ -50,4 +50,6 @@ Please cite our paper in your publications if it helps your research:
 
 
 ### Q&A
-Please send message to ravika@gmail.com or shiv.surya314@gmail.com if you have any query regarding the code.
+1. If automatic download of pre-trained models fail, you can find instructions for manual download [here](https://github.com/val-iisc/sketchguess/blob/master/models/README.md)
+
+2. Please send message to ravika@gmail.com or shiv.surya314@gmail.com if you have any query regarding the code.
