@@ -3,7 +3,7 @@ import scipy.io
 import numpy as np
 import json
 
-outer_dict = json.load(open('data/temporal_test.json','rb'))
+outer_dict = json.load(open('data/data_split/temporal_test.json','rb'))
 data_w2v = scipy.io.loadmat('data/all_w2v.mat')['data_w2v']
 
 nouns = []
@@ -20,6 +20,7 @@ for sketch_idx in range(len(pred)):
 	category = sketch_data['sketch_category']
 	no_of_strokes = sketch_data['no_of_strokes']
 	human_guess = sketch_data['sequence']
+	print("Testing index: %s" %(str(sketch_idx).zfill(5)))
 	print("Category: %s" %(category))
 	print("No of strokes in sketch: %d" %(no_of_strokes))
 	_, knn_idx = knn.kneighbors(X=np.array(pred[sketch_idx]), n_neighbors=1)

@@ -5,8 +5,10 @@ import numpy as np
 import lasagne
 import scipy.io
 import time
+import os
+
 print('Initializing LSTM model...')
-execfile('lstm_1lyr512hid.py')
+execfile('src/lstm_1lyr512hid.py')
 
 with np.load('models/lstm_model_1lyr512hid_earlystopped.npz') as f:
          param_values = [f['arr_%d' % i] for i in range(len(f.files))]
@@ -15,8 +17,8 @@ with np.load('models/lstm_model_1lyr512hid_earlystopped.npz') as f:
 # Testing starts here
 start_time = time.time()
 te_size_counter = 0
-print "[Test] /data/_%d_set.npz"
-arr = np.load("./test_%d_set.npz")
+print "[Test] data/cnn_features_test.npz"
+arr = np.load("data/cnn_features_test.npz")
 x_test_chunk, _ = np.array(arr['arr_0']),np.array(arr['arr_1'])
 test_pred=[]
 for batch in range(len(x_test_chunk)):
@@ -26,5 +28,5 @@ for batch in range(len(x_test_chunk)):
     te_pred = res[0]
     te_size_counter = te_size_counter + 1
     test_pred.append(te_pred)
-np.savez("out/pred_release.mat",test_pred)
+np.savez("out/pred_release.npz",test_pred)
 print("Testing completed in %d seconds....." %(time.time()-start_time))
