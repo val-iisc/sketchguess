@@ -1,5 +1,8 @@
+![alt text](https://github.com/val-iisc/sketchguess/blob/master/HumanMime-AAAI-1.png "")
+
 # sketchguess
 Repository for code, models and dataset for the paper Game of Sketches: Deep Recurrent Models of Pictionary-style Word Guessing accepted at 36th AAAI Conference on Artificial Intelligence (AAAI-18), New Orleans, USA.
+
 
 
 ### License
